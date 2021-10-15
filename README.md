@@ -4,7 +4,7 @@
 
 ## Technical results
 
-File export of endpoints for insomina http client.
+Endpoint definitions for Insomnia HTTP client
 [meli_insomnia_client.json.zip](https://github.com/phalcondroid/meli-adn-backend/files/7356269/meli_insomnia_client.json.zip)
 
 ## Insomnia client
@@ -15,7 +15,7 @@ Project url:
 
 ## Authentication endpoints 
 
-JWT (Json web token, package) was implemented for this project.
+I used JWT (Json web token, package) to authenticate endpoints.
 
 #### login
 
@@ -27,8 +27,8 @@ url:
 ###### request
 ```json
 {
-	"username": "meli",
-	"password": "123"
+    "username": "meli",
+    "password": "123"
 }
 ```
 
@@ -55,11 +55,11 @@ url:
 
 ## Unauthorized
 
-missing token awt
+If the JWT token is missing the service will return an unauthorized 401 status:
 
 <img width="1124" alt="Screen Shot 2021-10-15 at 5 04 14 PM" src="https://user-images.githubusercontent.com/13957703/137558488-e993b3cf-0acf-41fd-9635-4a8de879bb34.png">
 
-Have to add in header the token bearer
+To fix this the JWT header must be included:
 
 <img width="801" alt="Screen Shot 2021-10-15 at 5 12 57 PM" src="https://user-images.githubusercontent.com/13957703/137559022-2eb27e15-f399-4ee3-b048-e6c1cba79935.png">
 
@@ -81,14 +81,14 @@ POST: `http://3.144.233.33:3000/v1/mutant`
 
 ```json
 {
-	"dna": [
-		"ATGCGA",
-		"CAGTGC",
-		"TTATGT",
-		"AGAAGG",
-		"CCCCTA",
-		"TCACTG"
-	]
+    "dna": [
+	"ATGCGA",
+	"CAGTGC",
+	"TTATGT",
+	"AGAAGG",
+	"CCCCTA",
+	"TCACTG"
+    ]
 }
 ```
 
@@ -116,14 +116,14 @@ POST: `http://3.144.233.33:3000/v1/mutant`
 
 ```json
 {
-	"dna": [
-		"TTGCGA",
-		"CAGTGC",
-		"TTATTT",
-		"AGAAGG",
-		"CCCCTA",
-		"TCACTG"
-	]
+    "dna": [
+	"TTGCGA",
+	"CAGTGC",
+	"TTATTT",
+	"AGAAGG",
+	"CCCCTA",
+	"TCACTG"
+    ]
 }
 ````
 
@@ -170,37 +170,38 @@ GET: `http://3.144.233.33:3000/v1/mutant`
 
 ## Project Description
 
-This project was created with NestJs framework based on expressJs and fastify, in this test was implemented clean architecture, jwt and mysql database connections.
+The project was created using NestJs framework (which is based on ExpressJs and Fastify),a clean architecture, JWT and MySQL database connections.
 
 ## Project Struct
 
 <img width="356" alt="assets" src="https://user-images.githubusercontent.com/13957703/137554883-b0ce63a9-0fae-4093-aff4-2ef4bfd56050.png">
 
-#### Component
+#### Components
 
-Components following the single responsability and S.O.L.I.D principles working as a unit of work component to handle some task, for example: auth, users, dna.
+I organized the different modules in components. These follow one of the S.O.L.I.D principles, the single responsability, each one addresses a specific and unique task, for instance: auth, users, dna, etc.
 
-#### Controller Folder
+#### Controllers Folder
 
-Controlles in NestJS is a port of data, is just an interface to receive and send data to the client.
+Controllers in NestJS work as bridge to manage incoming data, they're just interfaces to receive and send data to the clients.
 
 `dna.controllers.ts`
 
 #### Manager File
 
-The component manager is used as facade to interact or being used by other components, this ensures that all component functionalities are used only by through this facade component.
+The component's manager is used as a facade to interact with internal classes and being used by other components without exposing the internal functionality of each component.This ensures that all component functionalities are used only by through this facade component.
 
-Manager get in charge of call to providers of functionalities with dependency injector, i mean, the services files.
+The manager is in charge of calling providers of functionalities with dependency injection, i mean, the services files.
 
 `dna.manager.ts`
 
 #### Models Folder
 
-The model entities of working only for this component, have your own repository and data model.
+The models folders contain entities and providers. Entities describe the data model
+and the providers repositories allows to list them externally.
 
 #### Services Folder
 
-This folder contains all business logic, all behaviour and functionalities for the component, services usually are called by manager or them selfs.
+This folder contains all business logic, all behaviour and functionalities for the component, services are usuallycalled by manager or themselves.
 
 `validator.service.ts`
 

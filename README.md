@@ -105,7 +105,7 @@ POST: `http://3.144.233.33:3000/v1/mutant`
 
 #### IS HUMAN payload
 
-POST: `/v1/mutant`
+POST: `http://3.144.233.33:3000/v1/mutant`
 
 <img width="990" alt="Screen Shot 2021-10-15 at 5 17 59 PM" src="https://user-images.githubusercontent.com/13957703/137559350-efcce16a-b755-4add-9bbd-a2ebb66ec26d.png">
 
@@ -139,10 +139,12 @@ POST: `/v1/mutant`
 
 ## STATS
 
-GET: `/v1/mutant`
+GET: `http://3.144.233.33:3000/v1/mutant`
+
+<img width="877" alt="Screen Shot 2021-10-15 at 5 23 54 PM" src="https://user-images.githubusercontent.com/13957703/137560138-60d7a606-1edf-417b-b585-a58126436e84.png">
 
 ###### response
-```json
+```javascript
 {
   "data": {
     "count_human_dna": 3,

@@ -201,6 +201,9 @@ This folder contains all business logic, all behaviour and functionalities for t
 
 `validator.service.ts`
 
+## Debug in console
+
+<img width="890" alt="Screen Shot 2021-10-15 at 5 30 44 PM" src="https://user-images.githubusercontent.com/13957703/137561182-a80806a3-83a0-444d-930f-4fa1dae7b3cb.png">
 
 ## Stay in touch
 

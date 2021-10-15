@@ -17,25 +17,9 @@ JWT (Json web token, package) was implemented for this project.
 #### login
 
 url:
-`/v1/auth`
+`http://3.144.233.33:3000/v1/auth`
 
 <img width="1126" alt="Screen Shot 2021-10-15 at 4 38 06 PM" src="https://user-images.githubusercontent.com/13957703/137556722-ae881d87-7b17-4f46-8221-37a774c4beaf.png">
-
-#### Unauthorized
-
-missing token awt
-
-<img width="1124" alt="Screen Shot 2021-10-15 at 5 04 14 PM" src="https://user-images.githubusercontent.com/13957703/137558488-e993b3cf-0acf-41fd-9635-4a8de879bb34.png">
-
-Have to add in header the token bearer
-
-<img width="801" alt="Screen Shot 2021-10-15 at 5 12 57 PM" src="https://user-images.githubusercontent.com/13957703/137559022-2eb27e15-f399-4ee3-b048-e6c1cba79935.png">
-
-```json
-{
-  "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lbGkiLCJzdWIiOjIsImlhdCI6MTYzNDMzNTQwMiwiZXhwIjoxNjM0MzM1NDYyfQ.Vu8eoSiYdsVe9SlXAC3rRp2_NwJIpYI1jCwen424cqc"
-}
-```
 
 ###### request
 ```json
@@ -66,14 +50,118 @@ Have to add in header the token bearer
 }
 ```
 
-#### Mutant adn
+#### Unauthorized
 
-url:
-`/v1/mutant`
+missing token awt
 
-<img width="937" alt="Screen Shot 2021-10-15 at 5 01 07 PM" src="https://user-images.githubusercontent.com/13957703/137558190-f8913624-062d-4cbe-9d7f-afc61166ea87.png">
+<img width="1124" alt="Screen Shot 2021-10-15 at 5 04 14 PM" src="https://user-images.githubusercontent.com/13957703/137558488-e993b3cf-0acf-41fd-9635-4a8de879bb34.png">
+
+Have to add in header the token bearer
+
+<img width="801" alt="Screen Shot 2021-10-15 at 5 12 57 PM" src="https://user-images.githubusercontent.com/13957703/137559022-2eb27e15-f399-4ee3-b048-e6c1cba79935.png">
+
+```json
+{
+  "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lbGkiLCJzdWIiOjIsImlhdCI6MTYzNDMzNTQwMiwiZXhwIjoxNjM0MzM1NDYyfQ.Vu8eoSiYdsVe9SlXAC3rRp2_NwJIpYI1jCwen424cqc"
+}
+```
+
+## Mutant endpoint
+
+##### IS MUTANT payload
+
+POST: `http://3.144.233.33:3000/v1/mutant`
 
 <img width="1132" alt="Screen Shot 2021-10-15 at 5 04 58 PM" src="https://user-images.githubusercontent.com/13957703/137558456-39c0256d-6b08-47ec-ad4b-652cd233883e.png">
+
+##### request 
+
+```json
+{
+	"dna": [
+		"ATGCGA",
+		"CAGTGC",
+		"TTATGT",
+		"AGAAGG",
+		"CCCCTA",
+		"TCACTG"
+	]
+}
+```
+
+##### response
+
+```json
+{
+  "data": {
+    "isMutant": true
+  },
+  "statusCode": 201,
+  "message": "OK",
+  "timestamp": "2021-10-15T22:12:51.388Z",
+  "path": "/v1/mutant"
+}
+```
+
+#### IS HUMAN payload
+
+POST: `/v1/mutant`
+
+<img width="990" alt="Screen Shot 2021-10-15 at 5 17 59 PM" src="https://user-images.githubusercontent.com/13957703/137559350-efcce16a-b755-4add-9bbd-a2ebb66ec26d.png">
+
+##### request
+
+```json
+{
+	"dna": [
+		"TTGCGA",
+		"CAGTGC",
+		"TTATTT",
+		"AGAAGG",
+		"CCCCTA",
+		"TCACTG"
+	]
+}
+````
+
+##### response
+
+```json
+{
+  "data": {
+    "isMutant": false
+  },
+  "statusCode": 403,
+  "timestamp": "2021-10-15T22:17:54.244Z",
+  "path": "/v1/mutant"
+}
+````
+
+## STATS
+
+GET: `/v1/mutant`
+
+###### response
+```json
+{
+  "data": {
+    "count_human_dna": 3,
+    "count_mutant_dna": 4,
+    "ratio": 1.3333333333333333
+  },
+  "statusCode": 200,
+  "message": "OK",
+  "timestamp": "2021-10-15T22:20:04.534Z",
+  "path": "/v1/mutant"
+}
+```
+
+## DATABASE mysql
+
+![mei_db](https://user-images.githubusercontent.com/13957703/137559577-1c15f346-bd21-41b0-a180-74ca370d4311.png)
+
+<img width="938" alt="Screen Shot 2021-10-15 at 5 21 32 PM" src="https://user-images.githubusercontent.com/13957703/137559610-b621877f-b336-4b73-a4e3-011f7b9b2346.png">
+
 
 ## Project Description
 

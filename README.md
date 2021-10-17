@@ -11,7 +11,7 @@ Endpoint definitions for Insomnia HTTP client
 <img width="934" alt="Screen Shot 2021-10-15 at 5 42 14 PM" src="https://user-images.githubusercontent.com/13957703/137561777-0ed84770-d071-4513-b0c7-aabbc3492771.png">
 
 Project url:
-`http://3.144.233.33:3000/`
+`http://3.128.79.253:3000/`
 
 ## Authentication endpoints 
 
@@ -20,7 +20,7 @@ I used JWT (Json web token, package) to authenticate endpoints.
 #### login
 
 url:
-`http://3.144.233.33:3000/v1/auth`
+`http://3.128.79.253:3000/v1/auth`
 
 <img width="1126" alt="Screen Shot 2021-10-15 at 4 38 06 PM" src="https://user-images.githubusercontent.com/13957703/137556722-ae881d87-7b17-4f46-8221-37a774c4beaf.png">
 
@@ -73,7 +73,7 @@ To fix this the JWT header must be included:
 
 ##### IS MUTANT payload
 
-POST: `http://3.144.233.33:3000/v1/mutant`
+POST: `http://3.128.79.253:3000/v1/mutant`
 
 <img width="1132" alt="Screen Shot 2021-10-15 at 5 04 58 PM" src="https://user-images.githubusercontent.com/13957703/137558456-39c0256d-6b08-47ec-ad4b-652cd233883e.png">
 
@@ -108,7 +108,7 @@ POST: `http://3.144.233.33:3000/v1/mutant`
 
 #### IS HUMAN payload
 
-POST: `http://3.144.233.33:3000/v1/mutant`
+POST: `http://3.128.79.253:3000/v1/mutant`
 
 <img width="990" alt="Screen Shot 2021-10-15 at 5 17 59 PM" src="https://user-images.githubusercontent.com/13957703/137559350-efcce16a-b755-4add-9bbd-a2ebb66ec26d.png">
 
@@ -142,7 +142,7 @@ POST: `http://3.144.233.33:3000/v1/mutant`
 
 ## STATS
 
-GET: `http://3.144.233.33:3000/v1/mutant`
+GET: `http://3.128.79.253:3000/v1/mutant`
 
 <img width="877" alt="Screen Shot 2021-10-15 at 5 23 54 PM" src="https://user-images.githubusercontent.com/13957703/137560138-60d7a606-1edf-417b-b585-a58126436e84.png">
 

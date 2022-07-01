@@ -8,9 +8,9 @@ import {
 
 @Table({
   underscored: true,
-  tableName: 'meli_users',
+  tableName: 'meli_cities',
 })
-export class UsersModel extends Model {
+export class CityModel extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column
@@ -19,26 +19,11 @@ export class UsersModel extends Model {
   name: string;
 
   @Column
-  email: string;
+  userId: number;
 
   @Column
   phone: string;
 
   @Column
-  address: string;
-
-  @Column
-  username: string;
-
-  @Column
-  password: string;
-
-  @Column
-  status: number;
-
-  @Column
   createdAt: Date;
-
-  @Column
-  updatedAt: Date;
 }

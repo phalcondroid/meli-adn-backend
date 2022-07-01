@@ -6,7 +6,7 @@ import { HttpExceptionFilter } from './shared/interceptors/http-exception.interc
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix("v1");
+  app.setGlobalPrefix('v1');
   app.useGlobalInterceptors(new ResponseMapper());
   app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalPipes(new ValidationPipe());

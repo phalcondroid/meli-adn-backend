@@ -7,12 +7,7 @@ import { UsersModule } from './users/users.module';
 import { DnaModule } from './dna/dna.module';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot(),
-    DnaModule,
-    AuthModule,
-    UsersModule,
-  ],
+  imports: [ConfigModule.forRoot(), DnaModule, AuthModule, UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })

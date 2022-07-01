@@ -1,13 +1,12 @@
-import { Inject, Injectable } from "@nestjs/common";
-import { UsersModel } from "../models/entities/users.model";
+import { Inject, Injectable } from '@nestjs/common';
+import { UsersModel } from '../models/entities/users.model';
 
 @Injectable()
 export class FinderService {
-
   constructor(
     @Inject('USERS_REPOSITORY')
-    private usersRepository: typeof UsersModel
-  ) { }
+    private usersRepository: typeof UsersModel,
+  ) {}
 
   /**
    * Get user by username
@@ -16,7 +15,7 @@ export class FinderService {
    */
   public async getUserByUsername(username: string): Promise<UsersModel> {
     return await this.usersRepository.findOne({
-      where: { username }
+      where: { username },
     });
   }
 
